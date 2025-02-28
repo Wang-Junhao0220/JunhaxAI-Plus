@@ -33,7 +33,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: app
-          path: dist/app
+          path: D:\a\JunhaxAI-Plus\JunhaxAI-Plus\dist
 
       - name: create release
         id: create_release
