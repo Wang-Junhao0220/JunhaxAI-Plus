@@ -14,7 +14,7 @@ on:
 
 jobs:
   build-windows:
-    runs-on: windows-2019
+    runs-on: windows-latest, macos-latest, ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: app
-          path: D:\a\JunhaxAI-Plus\JunhaxAI-Plus\dist
+          path: D:/a/JunhaxAI-Plus/JunhaxAI-Plus/dist
 
       - name: create release
         id: create_release
@@ -51,7 +51,7 @@ jobs:
       # Since we have a directory, create a zip
       - name: zip the artifect dir into a zip
         run: |
-          powershell Compress-Archive D:\a\SWEN90013-Data-Platform-for-Biomaterial-Testing\SWEN90013-Data-Platform-for-Biomaterial-Testing\dist\app D:\a\SWEN90013-Data-Platform-for-Biomaterial-Testing\SWEN90013-Data-Platform-for-Biomaterial-Testing\dist\app.zip
+          powershell Compress-Archive D:/a/SWEN90013-Data-Platform-for-Biomaterial-Testing/SWEN90013-Data-Platform-for-Biomaterial-Testing/dist/app D:/a/SWEN90013-Data-Platform-for-Biomaterial-Testing/SWEN90013-Data-Platform-for-Biomaterial-Testing/dist/app.zip
 
       - name: Upload release asset
         id: upload-release-asset
@@ -60,6 +60,6 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
            upload_url: ${{ steps.create_release.outputs.upload_url }}
-           asset_path: dist/app.zip
+           asset_path: D:/a/JunhaxAI-Plus/JunhaxAI-Plus/dist/app.zip
            asset_name: app.zip
            asset_content_type: application/zip
