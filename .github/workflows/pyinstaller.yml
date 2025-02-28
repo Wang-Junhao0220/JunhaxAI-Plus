@@ -35,18 +35,18 @@ jobs:
           name: app
           path: D:/a/JunhaxAI-Plus/JunhaxAI-Plus/dist
 
-      - name: create release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
-          body: |
-            Test Release
-          draft: false
-          prerelease: false
+#      - name: create release
+#        id: create_release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: ${{ github.run_number }}
+#          release_name: Release ${{ github.run_number }}
+#          body: |
+#            Test Release
+#          draft: false
+#          prerelease: false
 
       # Since we have a directory, create a zip
       - name: zip the artifect dir into a zip
