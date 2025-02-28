@@ -1,0 +1,56 @@
+所有以"/"开头的均当作命令处理
+1./exit命令
+用法：/exit
+作用：退出当前程序
+2./reset命令
+用法：/reset [chat|cache|all]
+作用：开启新对话(清除上下文并清除屏幕，打印欢迎文本-chat模式)或删除缓存文件（cache模式）。参数为all时开启新对话并删除缓存
+3./save命令
+用法：/save [chat|config|all] filename extension(default=json)
+作用：指定文件名，扩展名保存对话(chat模式)或配置(config模式)。对话保存至同目录下的chat_history文件夹，配置保存到系统配置文件夹。
+用户可以指定保存对话时的文件名，扩展名，如果不指定，文件名由程序生成，扩展名为json。保存设置时不可以指定，默认为ai_config.json。
+参数为all的时候全部保存，此时指定的文件名扩展名只针对保存对话。
+使用示例：
+/save chat 重要对话 #保存当前对话到./chat_history/重要对话.json
+/save chat 重要对话 txt #保存当前对话到./chat_history/重要对话.txt
+/save chat #保存当前对话到./chat_history/[自动生成].json
+/save chat txt #保存当前对话到./chat_history/[自动生成].txt
+/save config #保存当前配置到系统配置文件夹
+/save all 重要对话 #保存当前对话到./chat_history/重要对话.json，保存当前配置到系统配置文件夹
+4./summary命令
+用法：/summary [view|1|2|3]
+作用：在用户保存时未指定文件名或自动保存时，生成文件名。view可以查看当前方式。
+1代表提取用户的第一个问题作为文件名
+2代表提取关键词生成文件名
+3代表使用AI生成摘要作为文件名
+如果要切换的方案与当前方案一致，则提示用户已是当前方案
+使用示例：
+/summary view #查看当前方案
+/summary 3 #切换至AI智能摘要(如果当前不是)。
+5./load命令
+用法：/load [chat|config] filename
+作用：加载对话历史（需要同时加载到对话缓存中）或配置文件。不填文件名加载最新的，填文件名需要扩填展名。
+使用示例：
+/load chat test.txt #加载./chat_history/test.txt并写入缓存，可以在多轮对话中使用上下文
+/load chat test2.json #加载./chat_history/test2.json并写入缓存，可以在多轮对话中使用上下文
+/load config [路径(可以相对，可以绝对)]/configTest.json #导入路径下的configTest.json文件
+6./settings命令
+用法：/settings [autosave|autoload] [chat|config] [view|on|off]
+作用：配置或查看程序是否自动保存，加载对话和配置文件。
+更改状态时如果已经是当前状态，例如autosave已开启，用户输入了开启命令，则提示用户已经开启
+使用示例：
+/settings autosave chat view #查看对话自动保存情况
+/settings autosave config view #查看配置自动保存情况
+/settings autosave on #开启（如果之前没有开启）
+/settings autoload off #关闭（如果之前开启）
+注意：autosave和autoload默认均为开启，且autosave chat, autosave config, autoload chat, autolaod config各自独立
+7./help命令：
+用法：/help COMMAND_NAME
+作用：获取命令帮助。没有参数时列出所有可用命令。
+使用示例：
+/help #给出所有可用命令，并告诉用户可以使用/help [具体命令]获取更多信息
+/help settings #告诉用户/settings命令使用方法及其功能
+/help unknown_command #告诉用户/unknown_command不存在
+8.autosave和autoload功能（不是命令）：
+autosave在用户退出程序时自动保存对话记录，文件名为程序生成（由/summary命令控制生成方案）
+autoload在程序启东时自动载入配置，并询问用户是否载入对话历史
