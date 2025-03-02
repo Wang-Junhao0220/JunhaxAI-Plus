@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JunhaxAI-GUI.iml" filepath="$PROJECT_DIR$/.idea/JunhaxAI-GUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Similarity/.idea/Similarity.iml" filepath="$PROJECT_DIR$/../Similarity/.idea/Similarity.iml" />
     </modules>
   </component>
 </project>
