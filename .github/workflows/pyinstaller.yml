@@ -29,7 +29,7 @@ jobs:
           pip install pyinstaller
       - name: Run pyinstaller
         run: |
-          python -m PyInstaller -F main.py
+          python -m PyInstaller -F -w main.py
       - uses: actions/upload-artifact@v4
         with:
           name: JunhaxAI-Plus-Windows
