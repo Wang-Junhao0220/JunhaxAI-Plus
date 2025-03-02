@@ -22,31 +22,30 @@
 # # 运行测试
 # test_multi_turn_conversation()
 
-# 创建SettingsWindow窗体
-from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication
-from ui.ui_settingsWindow import Ui_SettingsWindow
 # imports
 import os
+# 创建SettingsWindow窗体
+import qdarkstyle
 import sys
+from PyQt5 import QtWidgets, QtCore
+from PyQt5.QtWidgets import QApplication
+
 from ui.logic_settingsWindow import LogicSettingsWindow
+
+
 def launch_settings_window():
     os.environ['QT_ENABLE_HIGHDPI_SCALING'] = '1'
     through = QtCore.Qt.HighDpiScaleFactorRoundingPolicy.PassThrough
     QtWidgets.QApplication.setHighDpiScaleFactorRoundingPolicy(through)
     app = QtWidgets.QApplication(sys.argv)
     app_settings_window = LogicSettingsWindow()
+
+    # app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
+
     app_settings_window.show()
     sys.exit(app.exec_())
 
 
-if __name__ == "__main__":
-    # import sys
-    # app = QApplication(sys.argv)
-    # SettingsWindow = QtWidgets.QMainWindow()
-    # ui = Ui_SettingsWindow()
-    # ui.setupUi(SettingsWindow)
-    # SettingsWindow.show()
-    # sys.exit(app.exec_())
-    launch_settings_window()
 
+if __name__ == "__main__":
+    launch_settings_window()

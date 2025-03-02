@@ -20,19 +20,22 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTabWidget" name="settingsWidget">
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
       <property name="tabShape">
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
-      <widget class="QWidget" name="generalSettings">
+      <widget class="QWidget" name="chatSettings">
        <attribute name="title">
-        <string>General</string>
+        <string>Chat</string>
        </attribute>
        <layout class="QFormLayout" name="formLayout">
         <item row="0" column="0">
-         <widget class="QLabel" name="streamOption">
+         <widget class="QLabel" name="streamText">
           <property name="text">
            <string>Stream response</string>
           </property>
@@ -42,22 +45,232 @@
          <widget class="QComboBox" name="streamChoice">
           <item>
            <property name="text">
-            <string>Enable</string>
+            <string>Enabled</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Disable</string>
+            <string>Disabled</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="recoverChatText">
+          <property name="text">
+           <string>Auto recover previous chat:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="recoverChatChoice">
+          <item>
+           <property name="text">
+            <string>Enabled</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Disabled</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="autoSaveChatText">
+          <property name="text">
+           <string>Auto save chat</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="autoSaveChatChoice">
+          <item>
+           <property name="text">
+            <string>Immediately</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>When chat ends</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Never</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="multiTurnText">
+          <property name="text">
+           <string>Multi-turn conversation</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="multiTurnChoice">
+          <item>
+           <property name="text">
+            <string>Enabled</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Disabled</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="maxResponseText">
+          <property name="text">
+           <string>Max response tokens</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="maxResponseEdit"/>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="tempText">
+          <property name="text">
+           <string>Temperature</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="tempEdit"/>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="historyManText">
+          <property name="text">
+           <string>History chat files management</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QPushButton" name="historyManBtn">
+          <property name="text">
+           <string>Manage</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="appearanceSettings">
+       <attribute name="title">
+        <string>Appearance</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="themeText">
+          <property name="text">
+           <string>Theme</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="themeChoice">
+          <item>
+           <property name="text">
+            <string>System</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Darcula</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>AMOLED</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>aqua</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ConsoleStyle</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ElegantDark</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ManjaroMix</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MaterialDark</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ubuntu</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="fontText">
+          <property name="text">
+           <string>Font</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QFontComboBox" name="fontComboBox"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="langText">
+          <property name="text">
+           <string>Language</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="langChoice">
+          <item>
+           <property name="text">
+            <string>English(US)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>简体中文</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>正體中文</string>
            </property>
           </item>
          </widget>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="advancedSettings">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>Advanced</string>
        </attribute>
+       <layout class="QFormLayout" name="formLayout_3">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Custom API Key</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
