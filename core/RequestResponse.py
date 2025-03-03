@@ -1,7 +1,7 @@
 # Please install OpenAI SDK first: `pip3 install openai`
 
 from openai import OpenAI
-from PrintContents import history_manager  # 引入history_manager
+from core.PrintContents import history_manager  # 引入history_manager
 
 # API_KEY = "sk-412f81f433a74a8dbce46756d9acd508"
 # BASE_URL = "https://api.deepseek.com"

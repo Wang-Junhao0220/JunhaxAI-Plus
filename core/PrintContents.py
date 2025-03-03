@@ -1,5 +1,5 @@
 from colorama import init, Fore, Style
-from HistoryChatManager import HistoryChatManager
+from core.HistoryChatManager import HistoryChatManager
 
 # 初始化历史记录管理器
 history_manager = HistoryChatManager()
