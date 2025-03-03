@@ -28,6 +28,8 @@ from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication
 
 from ui.logic_settingsWindow import LogicSettingsWindow
+from core.RequestResponse import RequestResponse
+from core.PrintContents import PrintContents
 
 
 def launch_settings_window():
