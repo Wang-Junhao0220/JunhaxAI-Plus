@@ -157,6 +157,105 @@
           </property>
          </widget>
         </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="apiPlatText">
+          <property name="text">
+           <string>API platform</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QComboBox" name="apiPlatChoice">
+          <item>
+           <property name="text">
+            <string>DeepSeek</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Xunfei</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Alibaba</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>OpenAI</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Google</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="modelText">
+          <property name="text">
+           <string>Model</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QComboBox" name="modelChoice">
+          <item>
+           <property name="text">
+            <string>DeepSeek R1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>DeepSeek V3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>[Xunfei]DeepSeek R1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>[Xunfei]DeepSeek V3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GPT-3.5-Turbo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GPT-4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>gemini-2-flash</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="keyText">
+          <property name="text">
+           <string>API key</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLineEdit" name="keyEdit">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="appearanceSettings">
@@ -264,9 +363,16 @@
        </attribute>
        <layout class="QFormLayout" name="formLayout_3">
         <item row="0" column="0">
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="customClientText">
           <property name="text">
-           <string>Custom API Key</string>
+           <string>Custom AI client</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="customeClientBtn">
+          <property name="text">
+           <string>Custome</string>
           </property>
          </widget>
         </item>

@@ -17,6 +17,10 @@ class LogicSettingsWindow(QtWidgets.QMainWindow):
         self.ui.autoSaveChatChoice.setCurrentIndex(0)  # 0->Immediately
         self.ui.multiTurnChoice.setCurrentIndex(0)  # 0->Enabled
         self.ui.maxResponseEdit.setText("4096")  # Default max response tokens
+        self.ui.tempEdit.setText("0.5")
+        self.ui.apiPlatChoice.setCurrentIndex(1)
+        self.ui.modelChoice.setCurrentIndex(2)
+        self.ui.keyEdit.setText("Default API Key")
 
         self.monitor()
 
